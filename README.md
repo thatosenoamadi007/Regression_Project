@@ -12,8 +12,9 @@ a country from. In each case discuss the model. How significant is the slope? Do
 intuitive sense? Does it correspond to your intuition from the scatter plot? Discuss how you’d deal
 with outliers?
 
-(a) The country’s total area
-(b) The country’s lowest point
+  (a) The country’s total area
+
+  (b) The country’s lowest point
 
 2. Several Variable regression/ Use the techniques of multiple variable regression to fix a model using
 some of the variables given. For example, the lowest point, the total area, the land and water area and
