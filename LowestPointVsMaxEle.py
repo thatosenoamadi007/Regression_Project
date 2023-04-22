@@ -75,7 +75,10 @@ plt.scatter(X_data, Y_data)
 # Plot the regression line
 x1 = [min(X_data), max(X_data)]
 y1 = [β0 + β1 * x_data for x_data in x1]
-plt.plot(x1, y1, color='red')
-plt.savefig("low_point_vs_max_elevation.png")
+
+plt.xlabel("Lowest Point")
+plt.ylabel("Max Elevation")
+plt.title("Lowest Point vs Max Elevation")
+plt.savefig("low_point_vs_max_elevation1.png")
 plt.show()
 

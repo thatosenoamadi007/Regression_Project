@@ -77,6 +77,9 @@ plt.scatter(X_data, Y_data)
 x1 = [min(X_data), max(X_data)]
 y1 = [β0 + β1 * x_data for x_data in x1]
 plt.plot(x1, y1, color='red')
+plt.xlabel("Total Area")
+plt.ylabel("Max Elevation")
+plt.title("Total Area vs Max Elevation")
 plt.savefig("total_area_vs_max_elevation")
 
 plt.show()
