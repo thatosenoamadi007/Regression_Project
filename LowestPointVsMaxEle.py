@@ -21,10 +21,10 @@ lowest_point_num,uniques=pd.factorize(lowest_point)
 x = lowest_point_num
 y = max_elevation
 
-'''fig, ax = plt.subplots()
-box = ax.boxplot(y)
-#plt.savefig("LM_boxplot.png")
-
+fig, ax = plt.subplots()
+box = ax.boxplot(x)
+plt.savefig("LM_boxplot.png")
+''' 
 # Get the whiskers and caps
 # Get the whiskers' data
 whiskers_data = [whiskers.get_ydata() for whiskers in box['whiskers']]
@@ -79,6 +79,6 @@ y1 = [β0 + β1 * x_data for x_data in x1]
 plt.xlabel("Lowest Point")
 plt.ylabel("Max Elevation")
 plt.title("Lowest Point vs Max Elevation")
-plt.savefig("low_point_vs_max_elevation1.png")
-plt.show()
+#plt.savefig("low_point_vs_max_elevation1.png")
+#plt.show()
 

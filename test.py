@@ -1,35 +1,25 @@
-from scipy import stats
-import numpy as np
-# Generate some data with outliers
-x = [-5, 6, 3, 4, 56]
-y = [10, 20, 30, 40, 50]
+from sklearn.linear_model import LinearRegression
+import pandas as pd
 
-# Convert the lists to numpy arrays
-x = np.array(x)
-y = np.array(y)
+# Load the data into a Pandas dataframe
+data = pd.read_csv('DataSet.csv')
 
-# Calculate the Z-score of each data point for y only
-y_z_scores = stats.zscore(y)
+# Define the independent variables and the dependent variable 
+#add th total area land area and water area to the independent variables
+X = 
+y = data['Maximum.elevation'].values.astype(float)
 
-# Remove data points with Z-score greater than 3 (or any other threshold) for y only
-threshold = 1
-y_filtered = y[abs(y_z_scores) < threshold]
+# Create the model and fit it to the data
+model = LinearRegression().fit(X, y)
 
-# Filter x data based on which y values were removed
-x_filtered = x[abs(y_z_scores) < threshold]
-
-print("Original x data:", x)
-print("Original y data:", y)
-print("Filtered x data:", x_filtered)
-print("Filtered y data:", y_filtered)
-
-# Plot the data
+# Print the coefficients for each independent variable
+# plot the data
 import matplotlib.pyplot as plt
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
-ax1.plot(x)
-ax1.plot(x_filtered)
-ax1.set_title('X data')
-ax2.plot(y)
-ax2.plot(y_filtered)
-ax2.set_title('Y data')
+plt.scatter(X[:,0], y, color='red')
+plt.scatter(X[:,1], y, color='blue')
+plt.scatter(X[:,2], y, color='green')
+plt.title('Total Area vs Max Elevation', fontsize=14)
+plt.xlabel('Total Area', fontsize=14)
+plt.ylabel('Max Elevation', fontsize=14)
+plt.grid(True)
 plt.show()
