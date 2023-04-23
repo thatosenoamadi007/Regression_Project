@@ -8,11 +8,13 @@ from scipy import stats
 data = pd.read_csv("DataSet.csv")
 data["Lowest.point"] = pd.factorize(data["Lowest.point"])[0]
 
-threshold = 5
+#uncomment to remove outliers
+
+"""threshold = 5
 z_scores = stats.zscore(data[["TotalArea", "LandArea", "WaterArea", "Lowest.point", "Pop2023"]])
 abs_z_scores = np.abs(z_scores)
 filtered_entries = (abs_z_scores < threshold).all(axis=1)
-data = data[filtered_entries]
+data = data[filtered_entries"""
 
 # Select the independent variables
 X = data[["TotalArea", "LandArea", "WaterArea", "Lowest.point", "Pop2023"]]
@@ -49,5 +51,5 @@ plt.title("Actual vs Predicted ME")
  
 
 plt.tight_layout()
-plt.savefig("MultipleRegression3.png")
+plt.savefig("MultipleRegression_withOutliers.png")
 plt.show()
